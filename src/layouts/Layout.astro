@@ -157,7 +157,41 @@ const { title } = Astro.props;
   }
 
 
-  .yellow {
+
+  .floating {
+  /* Specify the initial position of the image */
+  position: relative;
+  
+  /* Create a named animation */
+  animation-name: float;
+  
+  /* Specify the duration of one cycle of the animation */
+  animation-duration: 1.4s;
+  
+  /* Specify that the animation should alternate between starting and ending states */
+  animation-direction: alternate;
+  
+  /* Specify that the animation should run indefinitely */
+  animation-iteration-count: infinite;
+  
+  /* Specify a smooth transition between animation states */
+  animation-timing-function: ease-in-out;
+}
+
+/* Define the start state of the animation */
+@keyframes float {
+  from {
+    top: 0px;
+  }
+  
+  /* Define the end state of the animation */
+  to {
+    top: 10px;
+  }
+} 
+
+
+.yellow {
 color: #ffbe0b;
 }
 
@@ -180,4 +214,31 @@ color: #08d54f;
 .pink{
     color: #ff006e;
 }
+
+
+
+.yellowback {
+background-color: #ffbe0b;
+}
+
+.orangeback {
+background-color: #fb5607;
+}
+
+.purpleback {
+background-color: #8338ec;
+}
+
+.blueback {
+background-color: #3a8dff;
+}
+
+.greenback {
+background-color: #08d54f;
+}
+
+.pinkback{
+    background-color: #ff006e;
+}
+
 </style>
