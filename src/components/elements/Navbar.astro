@@ -6,20 +6,24 @@ import  Navitem from "../shared/Navitem.astro";
 const navItems = [
     {
         href:"#",
-        text:"Home"
+        text:"Home",
+        target:""
     },
 
     {
         href:"#about-us",
-        text:"About us"
-    },
-    {
-        href:"#services",
-        text:"Services"
+        text:"About Us",
+        target:""
     },
     {
         href:"#ourplans",
-        text:"Our Plans"
+        text:"Plans",
+        target:""
+    },
+    {
+        href:"https://www.instagram.com/pergi.app/",
+        text:"Instagram ↗",
+        target: "_blank"
     },
 ]
 ---
@@ -31,8 +35,8 @@ const navItems = [
             <div class="min-w-max inline-flex relative">
                 <a href="https://www.instagram.com/pergi.app/" target="_blank" class="relative flex items-center gap-3">
                     <img src="\Pergilogonoback.png" width="30"alt="">
-                    <div class="inline-flex text-lg font-semibold text-heading-1">PERGI
-                    </div>
+                    <!-- <div class="inline-flex text-lg font-semibold text-heading-1">PERGI
+                    </div> -->
                 </a>
             </div>
 
