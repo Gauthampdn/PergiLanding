@@ -52,14 +52,26 @@ import ByNumber from "./ByNumber.astro";
                                 </svg>                                      
                             </span>
                         </Button>
+
+                        
                     </form>
 
                     <script>
                         document.getElementById('email-form').addEventListener('submit', function(e) {
                             e.preventDefault();
-                            
+                    
                             var email = document.getElementById('email').value;
-                
+                    
+                            // Get the button and its children
+                            var submitButton = document.getElementById('submitBtn');
+                            var submitText = submitButton.querySelector('span:not(#loading)');
+                            var loadingText = submitButton.querySelector('#loading');
+                    
+                            // Change the button to a loading state
+                            submitText.style.display = 'none';
+                            loadingText.style.display = 'block';
+                            submitButton.disabled = true;
+                    
                             fetch('https://script.google.com/macros/s/AKfycbwSagZvXaimLG6EyAhcbRWWCkAyQO_dJMCjTVESmHngsuWoBpSdma7mcgFWlm4tHmry/exec', {
                                 method: 'POST',
                                 mode: 'no-cors',
@@ -69,15 +81,26 @@ import ByNumber from "./ByNumber.astro";
                                 },
                                 body: 'email=' + encodeURIComponent(email),
                             })
-                            
+                            .then(function() {
+                                // Once the form is submitted successfully, show the thanks message
+                                var thanksMessageElement = document.getElementById('thanks-message');
+                                thanksMessageElement.style.display = 'block';
+                    
+                                // Revert the button to its original state
+                                submitText.style.display = 'block';
+                                loadingText.style.display = 'none';
+                                submitButton.disabled = false;
+                            });
                         });
                     </script>
-
-
-
-
+                    
+                    
 
                 </div>
+                
+            </div>
+            <div id="thanks-message" class="mt-5 xl:text-xl/tight font-bold text-heading-2" style="display: none;"> 
+                Thanks for submitting!
             </div>
         </div>
 
