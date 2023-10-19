@@ -2,7 +2,7 @@
 
 Welcome to the official documentation for the Pergi.app landing page. Pergi is designed to revolutionize the way users interact with ChatGPT by providing an efficient way to save, categorize, and reuse prompts. This README will guide you through the contents of our landing page.
 
-## Table of Contents
+## The Table of Contents
 
 1. [Home](#home)
 2. [About Us](#about-us)
